@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: bluebrain-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: bluebrain_db
+      POSTGRES_USER: bb_user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
