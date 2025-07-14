@@ -10,13 +10,10 @@ import com.bluebrain.backend.repository.TokenRepository;
 import com.bluebrain.backend.repository.UserRepository;
 import com.bluebrain.backend.util.jwt.JwtUtil;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.concurrent.TimeUnit;
 
 @Service
 @RequiredArgsConstructor
@@ -88,7 +85,7 @@ public class AuthenticationService {
 
     private void saveUserToken(UserEntity user, String jwtToken) {
         TokenEntity token = TokenEntity.builder()
-                .user(user)
+                .appUser(user)
                 .token(jwtToken)
                 .tokenType(TokenType.BEARER)
                 .expired(false)
@@ -100,7 +97,7 @@ public class AuthenticationService {
     }
 
     private void revokeAllUserTokens(UserEntity user) {
-        var validUserTokens = tokenRepository.findAllValidTokenByUserId(user.getId());
+        var validUserTokens = tokenRepository.findAllValidTokenByAppUserId(user.getId());
         if (validUserTokens.isEmpty()) return;
 
         validUserTokens.forEach(token -> {

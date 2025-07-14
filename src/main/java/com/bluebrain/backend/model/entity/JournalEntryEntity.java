@@ -1,10 +1,19 @@
 package com.bluebrain.backend.model.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@Table(name = "journal_entry")
 public class JournalEntryEntity {
 
     @Id
@@ -19,5 +28,6 @@ public class JournalEntryEntity {
     private LocalDate createdAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private UserEntity userEntity;
+    @JoinColumn(name = "user_id")
+    private UserEntity appUser;
 }

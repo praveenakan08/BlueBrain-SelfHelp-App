@@ -1,9 +1,6 @@
 package com.bluebrain.backend.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -16,27 +13,39 @@ import java.util.List;
 
 @Entity
 @Builder
-@Table(name = "user")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Table(name = "app_user")
 public class UserEntity implements UserDetails {
 
     @Id
     @GeneratedValue
     private Long id;
 
+    @Column
     private String firstName;
 
+    @Column
     private String lastName;
 
+    @Column
     private String email;
 
+    @Column
     private String password;
 
+    @Column
     private Long age;
 
+    @Column
     private String gender;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<JournalEntryEntity> journalEntryEntityList;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<TokenEntity> tokenEntityList;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

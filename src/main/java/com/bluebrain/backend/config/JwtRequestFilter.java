@@ -1,5 +1,6 @@
 package com.bluebrain.backend.config;
 
+import com.bluebrain.backend.service.CustomUserDetailsService;
 import com.bluebrain.backend.service.RedisService;
 import com.bluebrain.backend.util.jwt.JwtUtil;
 import jakarta.servlet.FilterChain;
@@ -29,7 +30,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     private JwtUtil jwtUtil;
 
     @Autowired
-    private UserDetailsService userDetailsService;
+    private CustomUserDetailsService userDetailsService;
 
     @Autowired
     private RedisService redisService;
