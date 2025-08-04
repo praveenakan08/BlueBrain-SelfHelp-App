@@ -33,7 +33,9 @@ public class SecurityConfig {
     private final CustomUserDetailsService userDetailsService;
 
     private static final String[] WHITE_LIST_URL = {
-            "/api/v1/auth/**"
+            "/api/v1/auth/**",
+            "/api/v1/chat/**",
+
     };
 
     @Bean
