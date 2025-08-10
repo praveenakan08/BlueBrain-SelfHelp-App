@@ -1,5 +1,5 @@
 # build stage
-FROM maven:3.9.0-eclipse-temurin-17 AS build
+FROM maven:3.9.0-eclipse-temurin-21 AS build
 WORKDIR /app
 # copy only what's needed for a fast build-cache
 COPY pom.xml .
@@ -8,7 +8,7 @@ COPY src ./src
 RUN mvn -B -DskipTests package
 
 # runtime stage
-FROM eclipse-temurin:17-jre-jammy
+FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
 # copy built jar (works if your build produces target/*.jar)
 COPY --from=build /app/target/*.jar app.jar
