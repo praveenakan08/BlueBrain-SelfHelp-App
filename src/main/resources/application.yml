@@ -17,7 +17,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        default_schema: ${SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA}
+        default_schema: ${SPRING_JPA_DEFAULT_SCHEMA:blue_brain}
       database: postgresql
       database-platform: org.hibernate.dialect.PostgreSQLDialect
 
