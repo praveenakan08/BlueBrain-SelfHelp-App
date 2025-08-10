@@ -12,13 +12,13 @@ export default function App() {
   return (
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="signup" element={<Registration />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/signup" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/journal" element={<MyJournal />} />
         <Route path="/mood-tracker" element={<MyMoodTracker />} />
         <Route path="/media" element={<MyMedia />} />
         <Route path="/chat" element={<MyChat />} />
-        <Route path="/*" element={<Dashboard />} />
+        <Route path="/*" element={<Registration />} />
       </Routes>
   );
 }
