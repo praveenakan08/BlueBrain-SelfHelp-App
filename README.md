@@ -58,3 +58,10 @@ cd BlueBrain-SelfHelp-App
   - Pagination & Filtering  
   - Caching with Redis  
   - Testing: JUnit + Mockito (Backend), Jest (Frontend)  
+
+
+## Deployment
+
+Using render app for both frontend and backend
+
+URL - https://bluebrain-frontend.onrender.com/ 
