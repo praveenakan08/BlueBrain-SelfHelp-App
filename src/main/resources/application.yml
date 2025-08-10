@@ -5,9 +5,9 @@ spring:
   application:
     name: bluebrain-backend
   datasource:
-    url: jdbc:postgresql://localhost:5432/blue_brain
-    username: pravee08
-    password: PraveeKan24*
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -17,6 +17,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        default_schema: ${SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA}
       database: postgresql
       database-platform: org.hibernate.dialect.PostgreSQLDialect
 
