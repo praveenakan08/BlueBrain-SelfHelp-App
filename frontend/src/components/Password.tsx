@@ -4,7 +4,6 @@ interface PasswordProps {
   placeholder: string;
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  // optional id or name props can be added if needed
 }
 
 const Password = ({ placeholder, value, onChange }: PasswordProps): JSX.Element => {

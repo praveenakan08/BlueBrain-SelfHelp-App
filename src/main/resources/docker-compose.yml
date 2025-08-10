@@ -1,16 +1,34 @@
 services:
-  postgres:
+  db:
     image: postgres:16
     container_name: bluebrain-postgres
     restart: always
     environment:
-      POSTGRES_DB: bluebrain_db
-      POSTGRES_USER: bb_user
-      POSTGRES_PASSWORD: password
+      POSTGRES_DB: blue_brain
+      POSTGRES_USER: pravee08
+      POSTGRES_PASSWORD: PraveeKan24*
     ports:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/blue_brain
+      SPRING_DATASOURCE_USERNAME: bluebrain
+      SPRING_DATASOURCE_PASSWORD: <password>
+      SPRING_JPA_PROPERTIES_HIBERNATE_DEFAULT_SCHEMA: blue_brain
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
 volumes:
   pgdata:
