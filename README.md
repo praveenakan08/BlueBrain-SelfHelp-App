@@ -44,7 +44,7 @@ cd BlueBrain-SelfHelp-App
 - 📝 **Journalling** to record thoughts and reflections  
 - 📊 **Mood Tracking** with analytics and insights  
 - 🤖 **ChatBot** to support mental health concerns  
-- 🎥 **Media Hub** to display relatable self-help content  
+- 🎥 **Media Hub** to display relatable self-help content  [Development - IN PROGRESS]
 
 ---
 
