@@ -43,7 +43,7 @@ cd BlueBrain-SelfHelp-App
 
 - 📝 **Journalling** to record thoughts and reflections  
 - 📊 **Mood Tracking** with analytics and insights  
-- 🤖 **ChatBot** to support mental health concerns  
+- 🤖 **ChatBot** to support mental health concerns - Using Llama AI agent - https://github.com/praveenakan08/self-help-agent
 - 🎥 **Media Hub** to display relatable self-help content  [Development - IN PROGRESS]
 
 ---
