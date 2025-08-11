@@ -52,7 +52,7 @@ cd BlueBrain-SelfHelp-App
 
 - 🔐 **Security**: Authentication (Spring Security with JWT) & Authorization  
 - 💾 **Storage & Persistence**: Relational Database - PostgreSQL  
-- 🐳 **Deployment**: Dockerized containers published and deployed via GitHub Actions  
+- 🐳 **Deployment**: Dockerized containers published and deployed via Render
 - 🔗 **Integration**: RESTful APIs, OpenAPI, Swagger Docs, Async Processing with Apache Kafka  
 - 🚀 **Enhancements**:  
   - Pagination & Filtering  
